@@ -30,9 +30,10 @@ for i in range(int(sys.stdin.readline())):
     maa2andmed[5] += 1
 tulemus = []
 for riik in riigid:
-    tulemus.append(riik)
+    tulemus.append(riigid[riik])
 tulemus = sorted(tulemus, key = lambda x: (-x[1], -x[2],-x[3],-x[4], x[5], x[0]))
-print(riigid)
+for s in tulemus:
+    print(s[0])
 
 
 
