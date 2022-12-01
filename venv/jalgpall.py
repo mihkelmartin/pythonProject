@@ -2,7 +2,7 @@ import sys
 riigid = {}
 for i in range(int(sys.stdin.readline())):
     maanimi = sys.stdin.readline().strip()
-    riigid[maanimi] = [maanimi,0,0,0,0,0]
+    riigid[maanimi] = [maanimi,0,0,-9999999,0,0]
 for i in range(int(sys.stdin.readline())):
     mang = sys.stdin.readline().strip().split()
     maad = mang[0].split("-")
@@ -13,6 +13,10 @@ for i in range(int(sys.stdin.readline())):
     maa2varavad = int(varavad[1])
     maa1andmed = riigid[maa1]
     maa2andmed = riigid[maa2]
+    if maa1andmed[3] == -9999999:
+        maa1andmed[3] = 0
+    if maa2andmed[3] == -9999999:
+        maa2andmed[3] = 0
     if maa1varavad > maa2varavad:
         maa1andmed[1] += 3
         maa1andmed[2] += 1
